@@ -1,6 +1,8 @@
 package com.example.tarea_1_elementos_de_ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -10,13 +12,19 @@ import com.example.tarea_1_elementos_de_ui.Fragment3
 import com.example.tarea_1_elementos_de_ui.Fragment4
 import com.example.tarea_1_elementos_de_ui.Fragment5
 
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        // Botón para abrir el segundo Activity
+        val btnOpenSecond = findViewById<Button>(R.id.btnOpenSecond)
+        btnOpenSecond.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
 
         // Fragment inicial
         if (savedInstanceState == null) {

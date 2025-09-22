@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tarea_1_Elementos_de_UI">
         <activity
+            android:name=".SecondActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
