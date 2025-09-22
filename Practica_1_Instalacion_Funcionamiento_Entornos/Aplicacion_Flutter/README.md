@@ -18,6 +18,7 @@ Aplicación móvil en Flutter que muestra distintos elementos de UI a través de
 3. Abrir el proyecto y ejecutar en la terminal:
 
    flutter pub get
+   
    flutter run
 
    
