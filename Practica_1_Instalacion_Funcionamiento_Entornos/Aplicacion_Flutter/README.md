@@ -17,10 +17,10 @@ Aplicación móvil en Flutter que muestra distintos elementos de UI a través de
 2. Conectar un **dispositivo físico** o abrir un **emulador**.  
 3. Abrir el proyecto y ejecutar en la terminal:
 
-```bash
-flutter pub get
-flutter run
+   flutter pub get
+   flutter run
 
+   
 ---
 
 📸 Evidencias
