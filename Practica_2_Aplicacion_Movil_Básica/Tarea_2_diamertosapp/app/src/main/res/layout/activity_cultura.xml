@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Título del Activity -->
+        <TextView
+            android:id="@+id/tituloCultura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historia del Día de Muertos"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Imagen alusiva -->
+        <ImageView
+            android:id="@+id/imgFondo"
+            android:src="@drawable/fondo1"
+            android:contentDescription="@string/imagen_fondo"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"
+            android:background="?android:attr/colorBackground"/>
+
+        <!-- Historia del Día de Muertos -->
+        <TextView
+            android:id="@+id/tvHistoria"
+            android:text="El Día de Muertos hunde sus raíces en las antiguas cosmovisiones indígenas de México, donde la muerte era entendida no como un final, sino como una transición hacia otros planos de existencia. Para los pueblos nahuas, purépechas y mazatecos, el Mictlán era el inframundo al que las almas debían llegar tras la vida terrenal, un lugar de pruebas y misterios custodiado por dioses como Mictlantecuhtli y Mictecacíhuatl, señores del Mictlán, que vigilaban el paso de los difuntos a lo largo de un camino lleno de obstáculos. Acompañando a los muertos en su trayecto, el xoloitzcuintle, perro sagrado de origen prehispánico, servía como guía que ayudaba a atravesar el inframundo y encontrar su destino final. Con la llegada de los españoles, estas tradiciones se fusionaron con el catolicismo, dando origen a una celebración única que honra a los ancestros con altares llenos de flores de cempasúchil, velas, incienso, alimentos favoritos y fotografías, símbolos que iluminan y facilitan el regreso de los espíritus al mundo terrenal. Cada ofrenda, cada calavera de azúcar y cada figura de papel picado no solo rememora a los seres queridos, sino que mantiene viva la conexión entre los mundos, un puente místico donde el tiempo se diluye y la vida y la muerte se entrelazan en un ciclo sagrado, recordándonos que celebrar a los que partieron es también celebrar la riqueza de nuestra cultura y la magia que habita en nuestras raíces."
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Fragment para botón regresar -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/regresar_fragment_container"
+            android:name="com.example.tarea_2_diamuertosapp.fragments.RegresarInicioFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+    </LinearLayout>
+</ScrollView>

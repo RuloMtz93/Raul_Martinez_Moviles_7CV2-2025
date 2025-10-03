@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tarea_2_diamertosapp</string>
+    <string name="imagen_fondo">Imagen de altar de Día de Muertos</string>
+    <string name="titulo_main">Día de Muertos</string>
+    <string name="explora_ofrendas">Explora las Ofrendas</string>
+    <string name="ver_ofrendas">Ver Ofrendas</string>
+
+</resources>

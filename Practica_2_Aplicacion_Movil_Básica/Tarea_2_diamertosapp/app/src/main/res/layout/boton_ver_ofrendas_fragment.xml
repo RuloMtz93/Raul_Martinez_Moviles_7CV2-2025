@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/text_boton_ver_ofrendas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explora las Ofrendas"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_ir_a_ofrendas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_ir_a_ofrendas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver Ofrendas"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF9800"
+        android:elevation="6dp"
+        android:padding="12dp"
+        app:cornerRadius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/text_boton_ver_ofrendas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
