@@ -1,0 +1,15 @@
+<resources>
+    <style name="Theme.Camyson" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/guindaPrimary</item>
+        <item name="colorPrimaryContainer">@color/guindaPrimaryDark</item>
+        <item name="colorSecondary">@color/guindaAccent</item>
+        <item name="android:statusBarColor">@color/guindaPrimaryDark</item>
+    </style>
+
+    <style name="Theme.Camyson.Blue" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/azulPrimary</item>
+        <item name="colorPrimaryContainer">@color/azulPrimaryDark</item>
+        <item name="colorSecondary">@color/azulAccent</item>
+        <item name="android:statusBarColor">@color/azulPrimaryDark</item>
+    </style>
+</resources>

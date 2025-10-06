@@ -1,0 +1,15 @@
+<resources>
+    <!-- Guinda -->
+    <color name="guindaPrimary">#7B1E3A</color>
+    <color name="guindaPrimaryDark">#5E152B</color>
+    <color name="guindaAccent">#C2185B</color>
+
+    <!-- Azul -->
+    <color name="azulPrimary">#1565C0</color>
+    <color name="azulPrimaryDark">#0D47A1</color>
+    <color name="azulAccent">#03A9F4</color>
+
+    <!-- Fondo/texto modo claro -->
+    <color name="background">#FFFFFF</color>
+    <color name="onBackground">#121212</color>
+</resources>
