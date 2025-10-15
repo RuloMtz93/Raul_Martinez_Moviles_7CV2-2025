@@ -1,93 +1,171 @@
 README – Aplicación Cámara y Micrófono (Kotlin / Android)
-📌 Descripción
+Descripción
 
-App Android (Kotlin) que integra cámara, grabadora de audio, galerías con búsqueda/orden, visor/editor de imágenes, reproductor de audio con forma de onda, organizador por álbum/etiquetas, temas Azul/Guinda (con soporte claro/oscuro), feedback háptico/sonoro
+Aplicación Android desarrollada en Kotlin que integra cámara, grabadora de audio, galerías con búsqueda y ordenamiento, visor y editor de imágenes, reproductor de audio con forma de onda, organizador por álbum y etiquetas, temas Azul y Guinda (con soporte claro y oscuro), y retroalimentación háptica y sonora.
+
 ---
-🧱 Requisitos
+Requisitos
 
 Android Studio Giraffe o superior
+
 compileSdk: 36
+
 targetSdk: 36
+
 minSdk: 26
+
 Kotlin + ViewBinding
-Probado en Android 8–14
+
+Probado en Android 8 a 14
+
 ---
 🔐 Permisos
 
-En Android 13+ (API 33+):
+En Android 13 o superior (API 33+):
+
 READ_MEDIA_IMAGES (fotos)
+
 READ_MEDIA_AUDIO (audios)
-Compatibilidad para versiones previas:
+
+Compatibilidad para versiones anteriores:
+
 READ_EXTERNAL_STORAGE
-WRITE_EXTERNAL_STORAGE (sólo <= 28)
-Otros:
+
+WRITE_EXTERNAL_STORAGE (solo en versiones ≤ 28)
+
+Otros permisos:
+
 CAMERA
+
 RECORD_AUDIO
-La app solicita permisos en el inicio y de forma contextual cuando aplica.
+
+La aplicación solicita permisos al inicio y de forma contextual cuando es necesario.
+
 ---
 📦 Dependencias principales (build.gradle)
 
 CameraX (camera-core, camera-camera2, camera-lifecycle, camera-view)
+
 Media3 ExoPlayer (media3-exoplayer, media3-ui)
-Glide (caché miniaturas)
-PhotoView (zoom/gestos en imágenes)
-Room (metadatos: álbumes, etiquetas, relaciones)
-uCrop (recorte)
-ExifInterface (EXIF imágenes)
+
+Glide (caché de miniaturas)
+
+PhotoView (zoom y gestos en imágenes)
+
+Room (metadatos: álbumes, etiquetas y relaciones)
+
+uCrop (recorte de imágenes)
+
+ExifInterface (metadatos EXIF en imágenes)
+
 Material Components
+
 ---
 🗂 Estructura (archivos clave)
 
 Activities
+
 MainActivity: menú principal.
-CameraActivity: captura con CameraX, flash, temporizador, frontal/trasera, filtros, formato JPEG/PNG, EXIF, obturador sonoro + háptico.
-AudioRecorderActivity: grabación MediaRecorder (M4A/AAC), nivel en tiempo real, iniciar/pausar/reanudar/detener, calidad y duración configurables, guardado en MediaStore (Music/Recordings).
-PhotoGalleryActivity: galería de fotos con búsqueda/orden, selección múltiple (long-press), Organizar, Exportar ZIP.
-AudioGalleryActivity: galería de audios con búsqueda/orden (incluye duración), selección múltiple, Organizar, Exportar ZIP.
-PhotoDetailActivity: visor con zoom + Compartir, Info EXIF, Editar.
-AudioPlayerActivity: reproductor con forma de onda, play/pausa/seek, renombrar/compartir/eliminar.
-OrganizerActivity: asignar álbumes/etiquetas a la selección.
-SettingsActivity (si la incluyes): cambio de Tema Azul/Guinda al vuelo.
+
+CameraActivity: captura con CameraX, flash, temporizador, cámara frontal/trasera, filtros, formato JPEG/PNG, EXIF, sonido y vibración al obturador.
+
+AudioRecorderActivity: grabación con MediaRecorder (M4A/AAC), nivel en tiempo real, iniciar, pausar, reanudar y detener; configuración de calidad y duración; guardado en MediaStore (Music/Recordings).
+
+PhotoGalleryActivity: galería de fotos con búsqueda y ordenamiento, selección múltiple (long-press), funciones de organizar y exportar a ZIP.
+
+AudioGalleryActivity: galería de audios con búsqueda y ordenamiento (incluye duración), selección múltiple, organizar y exportar ZIP.
+
+PhotoDetailActivity: visor con zoom, compartir, información EXIF y edición.
+
+AudioPlayerActivity: reproductor con forma de onda, controles de reproducción, renombrar, compartir y eliminar.
+
+OrganizerActivity: asignación de álbumes y etiquetas a los elementos seleccionados.
+
+SettingsActivity: permite cambiar el tema Azul/Guinda en tiempo real.
+
 Adapters / Utils
+
 PhotoAdapter, AudioAdapter
-Haptics.kt, Sounds.kt: feedback háptico y sonido de obturador.
+
+Haptics.kt, Sounds.kt (retroalimentación háptica y sonora)
+
 Layouts
-activity_* y item_* correspondientes (incluyen búsqueda/orden y FABs “Organizar/Exportar”).
+
+Archivos activity_* e item_* correspondientes, con búsqueda, ordenamiento y botones flotantes para organizar o exportar.
+
 ---
 🧭 Flujo de uso
 
 Cámara
-Tomar Foto → Preview en tiempo real.
-Opciones: Flash Auto/On/Off, Temporizador (0/3/5/10), Cámara frontal/trasera, Filtro (Grayscale/Sepia/Brillo).
-Formato: elige JPEG/PNG → captura → se guarda en MediaStore/DCIM/Camera con EXIF.
-Sonido de obturador + háptico al guardar.
+
+Tomar foto con vista previa en tiempo real.
+
+Opciones: Flash (Auto/On/Off), Temporizador (0/3/5/10 s), cámara frontal o trasera, filtros (Grayscale, Sepia, Brillo).
+
+Selección de formato JPEG o PNG.
+
+Captura y guardado en MediaStore/DCIM/Camera con metadatos EXIF.
+
+Sonido y vibración de obturador al guardar.
+
 Grabación de audio
-Grabar Audio → configura duración y calidad; formato M4A (AAC/MP4) o AAC (.aac).
-Controles: iniciar, pausar, reanudar, detener; nivel en tiempo real.
-Guarda en MediaStore/Music/Recordings.
+
+Configurar duración y calidad (formato M4A o AAC).
+
+Controles: iniciar, pausar, reanudar y detener.
+
+Muestra nivel en tiempo real.
+
+Guardado en MediaStore/Music/Recordings.
+
 Galería de fotos
-Búsqueda por nombre y orden (fecha/nombre).
-Long-press para selección múltiple: aparecen Organizar y Exportar.
-Abrir una foto para ver zoom, Compartir, Info EXIF, Editar (recorte/rotación/ajustes básicos).
+
+Búsqueda por nombre y ordenamiento por fecha o nombre.
+
+Selección múltiple con long-press (opciones: Organizar, Exportar).
+
+Vista detallada con zoom, compartir, información EXIF y edición (recorte, rotación, ajustes).
+
 Galería de audio
+
 Lista con nombre, fecha y duración.
-Play (si no hay selección) o selección múltiple (long-press).
-Acciones: Organizar (álbum/etiquetas), Exportar ZIP.
-Exportar selección
-Con elementos seleccionados, pulsa Exportar → genera ZIP en Descargas (Export_YYYYMMDD_HHMMSS.zip) y ofrece abrir/compartir.
+
+Reproducción o selección múltiple (long-press).
+
+Acciones: Organizar (álbum o etiquetas) y Exportar ZIP.
+
+Exportación
+
+Con elementos seleccionados, elegir “Exportar”.
+
+Se genera un archivo ZIP en Descargas (Export_YYYYMMDD_HHMMSS.zip).
+
+Ofrece abrir o compartir el archivo.
+
 Temas
-Azul y Guinda, con modo claro/oscuro. El cambio se aplica en caliente (sin reiniciar app).
+
+Dos temas: Azul y Guinda.
+
+Soporte para modo claro y oscuro.
+
+El cambio de tema se aplica sin reiniciar la aplicación.
+
 ---
 🗃 Almacenamiento
 
-MediaStore: escritura/lectura segura de fotos y audios (scoped storage).
-Room: metadatos persistentes (álbumes, etiquetas, relaciones item↔etiquetas).
-Glide: caché de miniaturas eficiente.
+MediaStore: lectura y escritura segura de fotos y audios (scoped storage).
+
+Room: almacenamiento persistente de metadatos (álbumes, etiquetas y relaciones).
+
+Glide: manejo eficiente de caché de miniaturas.
+
 ---
 ⚠️ Limitaciones conocidas
 
-MP3: no soportado por MediaRecorder nativamente (requeriría pipeline externo — justificado en entrega)
-EXIF: sólo para JPEG (PNG no almacena EXIF estándar).
+El formato MP3 no es compatible con MediaRecorder nativo (requeriría un pipeline externo, lo cual está justificado en la entrega).
+
+Los metadatos EXIF solo se aplican a imágenes JPEG (PNG no soporta EXIF estándar).
+
 ---
 Capturas de pantalla
 ![1](https://github.com/user-attachments/assets/25c0d02b-4e12-49b7-97f1-ec5b1659e0df)
