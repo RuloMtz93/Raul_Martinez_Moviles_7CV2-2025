@@ -1,41 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.example.practica3_aplicacion_movil_nativa"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Cámara y micrófono -->
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
-    <!-- Lectura de medios (Android 13+) -->
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
-
-    <!-- Compatibilidad < Android 13 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.practica3_aplicacion_movil_nativa">
+    <!-- Permisos modernos (Android 13+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> <!-- Compatibilidad con versiones previas -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" /> <!-- Cámara / Micrófono -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Practica 3"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Camyson">
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".OrganizerActivity"
+            android:exported="false" />
+        <!-- Player estable -->
+        <activity
+            android:name=".AudioPlayerActivity"
+            android:exported="false" /> <!-- Editor de imagen -->
+        <activity
+            android:name=".ImageEditorActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" /> <!-- Galerías -->
+        <activity
+            android:name=".PhotoGalleryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AudioGalleryActivity"
+            android:exported="false"
+            android:label="Galería de Audios"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" /> <!-- Cámara / Grabadora -->
+        <activity
+            android:name=".CameraActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AudioRecorderActivity"
+            android:exported="true" /> <!-- Detalle foto -->
+        <activity
+            android:name=".PhotoDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" /> <!-- Launcher -->
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- FileProvider (por si editas/compartes desde cache; es seguro dejarlo) -->
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_provider_paths" />
-        </provider>
     </application>
+
 </manifest>

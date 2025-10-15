@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tema base (tu manifest puede seguir apuntando a Theme.MaterialComponents.DayNight.NoActionBar) -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+
+    <!-- Overlay GUINDA -->
+    <style name="ThemeOverlay_Guinda" parent="">
+        <item name="colorPrimary">@color/gnd_primary</item>
+        <item name="colorPrimaryVariant">@color/gnd_primary_variant</item>
+        <item name="colorOnPrimary">@color/gnd_on_primary</item>
+
+        <item name="colorSecondary">@color/gnd_secondary</item>
+        <item name="colorSecondaryVariant">@color/gnd_secondary_variant</item>
+        <item name="colorOnSecondary">@color/gnd_on_secondary</item>
+
+        <item name="colorSurface">@color/gnd_surface</item>
+        <item name="colorOnSurface">@color/gnd_on_surface</item>
+
+        <!-- Quitamos colorBackground/colorOnBackground para evitar el error -->
+    </style>
+
+    <!-- Overlay AZUL -->
+    <style name="ThemeOverlay_Azul" parent="">
+        <item name="colorPrimary">@color/az_primary</item>
+        <item name="colorPrimaryVariant">@color/az_primary_variant</item>
+        <item name="colorOnPrimary">@color/az_on_primary</item>
+
+        <item name="colorSecondary">@color/az_secondary</item>
+        <item name="colorSecondaryVariant">@color/az_secondary_variant</item>
+        <item name="colorOnSecondary">@color/az_on_secondary</item>
+
+        <item name="colorSurface">@color/az_surface</item>
+        <item name="colorOnSurface">@color/az_on_surface</item>
+
+        <!-- También sin colorBackground/colorOnBackground -->
+    </style>
+
+</resources>

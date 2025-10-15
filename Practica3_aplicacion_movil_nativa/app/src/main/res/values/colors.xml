@@ -1,15 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Guinda -->
-    <color name="guindaPrimary">#7B1E3A</color>
-    <color name="guindaPrimaryDark">#5E152B</color>
-    <color name="guindaAccent">#C2185B</color>
+    <!-- GUINDA (light) -->
+    <color name="gnd_primary">#8B0037</color>
+    <color name="gnd_primary_variant">#5C0024</color>
+    <color name="gnd_on_primary">#FFFFFF</color>
+    <color name="gnd_secondary">#D81B60</color>
+    <color name="gnd_secondary_variant">#AD1457</color>
+    <color name="gnd_on_secondary">#FFFFFF</color>
+    <color name="gnd_surface">#FFFFFF</color>
+    <color name="gnd_on_surface">#222222</color>
+    <color name="gnd_background">#FFFFFF</color>
+    <color name="gnd_on_background">#121212</color>
 
-    <!-- Azul -->
+    <!-- AZUL (light) -->
+    <color name="az_primary">#1565C0</color>
+    <color name="az_primary_variant">#0D47A1</color>
+    <color name="az_on_primary">#FFFFFF</color>
+    <color name="az_secondary">#26A69A</color>
+    <color name="az_secondary_variant">#00897B</color>
+    <color name="az_on_secondary">#FFFFFF</color>
+    <color name="az_surface">#FFFFFF</color>
+    <color name="az_on_surface">#222222</color>
+    <color name="az_background">#FFFFFF</color>
+    <color name="az_on_background">#121212</color>
+
+    <!-- Aliases legacy para estilos que piden estos nombres -->
+    <color name="guindaPrimary">#8B0037</color>
+    <color name="guindaPrimaryDark">#5C0024</color>
+    <color name="guindaAccent">#D81B60</color>
+
     <color name="azulPrimary">#1565C0</color>
     <color name="azulPrimaryDark">#0D47A1</color>
-    <color name="azulAccent">#03A9F4</color>
+    <color name="azulAccent">#26A69A</color>
 
-    <!-- Fondo/texto modo claro -->
-    <color name="background">#FFFFFF</color>
-    <color name="onBackground">#121212</color>
 </resources>
